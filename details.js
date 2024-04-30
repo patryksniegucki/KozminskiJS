@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", () => {
   const urlParams = new URLSearchParams(window.location.search);
   const carId = urlParams.get("id");
 
@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
     .then((data) => {
       const car = data.find((car) => car.id === parseInt(carId));
       if (car) {
-        // Wyświetlanie szczegółów wybranego wcześniej samochodu
+        document.getElementById("carPhoto").src = car.carPhoto;
         document.getElementById("carId").textContent = car.id;
         document.getElementById("carTitle").textContent = car.title;
         document.getElementById("carBrand").textContent = car.brand;
@@ -21,7 +21,6 @@ document.addEventListener("DOMContentLoaded", function () {
           car.engineCapacity;
         document.getElementById("carDescription").textContent = car.description;
 
-        // Ukrywanie tabeli z listą samochodów
         document.getElementById("carTableBody").style.display = "none";
       } else {
         console.error("Samochód o podanym ID nie został znaleziony.");
@@ -30,7 +29,7 @@ document.addEventListener("DOMContentLoaded", function () {
     .catch((error) => console.error("Wystąpił błąd:", error));
 });
 
-function toggleConfigurator() {
+const toggleConfigurator = () => {
   const section = document.getElementById("configuratorSection");
   section.style.display = section.style.display === "none" ? "block" : "none";
 
@@ -43,16 +42,16 @@ function toggleConfigurator() {
       data.forEach((item) => {
         const row = document.createElement("tr");
         row.innerHTML = `
-                  <td>${item.item}</td>
-                  <td>${item.price}</td>
-                  <td class="quantityCell">0</td>
-                  <td><button class="plusButton">+</button></td>
-                `;
+                    <td>${item.item}</td>
+                    <td>${item.price}</td>
+                    <td class="quantityCell">0</td>
+                    <td><button class="plusButton">+</button></td>
+                  `;
         optionalThingsTableBody.appendChild(row);
       });
-      // Dodanie nasłuchiwania na przyciski plus
+
       document.querySelectorAll(".plusButton").forEach((button) => {
-        button.addEventListener("click", function () {
+        button.addEventListener("click", () => {
           const row = button.parentNode.parentNode;
           const quantityCell = row.querySelector("td:nth-child(3)");
           const quantity = parseInt(quantityCell.textContent);
@@ -63,12 +62,12 @@ function toggleConfigurator() {
             quantityCell.textContent = "0";
             button.textContent = "+";
           }
-          calculateAdditionalCost(); // Wywołujemy funkcję calculateAdditionalCost() po każdej zmianie ilości
+          calculateAdditionalCost();
         });
       });
     });
-  // Funkcja, która będzie wywoływana po zmianie wyboru radiobuttona
-  function handlePaymentTypeChange() {
+
+  const handlePaymentTypeChange = () => {
     const selectedRadioButton = document.querySelector(
       'input[name="paymentType"]:checked'
     );
@@ -79,34 +78,37 @@ function toggleConfigurator() {
     } else {
       console.log("Żaden radiobutton nie jest wybrany.");
     }
-  }
+  };
 
-  // Dodanie nasłuchiwania na zmiany w wyborze radiobuttona
   document.querySelectorAll('input[name="paymentType"]').forEach((radio) => {
     radio.addEventListener("change", handlePaymentTypeChange);
   });
 
-  // Funkcja, która będzie wywoływana po zmianie wartości pól imię lub nazwisko
-  function handleInputChange() {
+  const handleInputChange = () => {
     const name = document.getElementById("imie").value;
     const surname = document.getElementById("nazwisko").value;
+    const address = document.getElementById("adres").value;
     console.log("Imię:", name);
     console.log("Nazwisko:", surname);
+    console.log("Adres:", address);
     localStorage.setItem("name", name);
     localStorage.setItem("surname", surname);
-  }
+    localStorage.setItem("address", address);
+  };
 
-  // Dodanie nasłuchiwania na zmiany w polu imię i nazwisko
   document.getElementById("imie").addEventListener("input", handleInputChange);
   document
     .getElementById("nazwisko")
     .addEventListener("input", handleInputChange);
+  document.getElementById("adres").addEventListener("input", handleInputChange);
 
   const storedName = localStorage.getItem("name");
   const storedSurname = localStorage.getItem("surname");
-  if (storedName && storedSurname) {
+  const storedAddress = localStorage.getItem("address");
+  if (storedName && storedSurname && storedAddress) {
     document.getElementById("imie").value = storedName;
     document.getElementById("nazwisko").value = storedSurname;
+    document.getElementById("adres").value = storedAddress;
   }
 
   const storedPaymentType = localStorage.getItem("paymentType");
@@ -116,7 +118,7 @@ function toggleConfigurator() {
     ).checked = true;
   }
 
-  function changeQuantity(button, isAddition) {
+  const changeQuantity = (button, isAddition) => {
     const row = button.parentNode.parentNode;
     const quantityCell = row.querySelector(".quantityCell");
     let quantity = parseInt(quantityCell.textContent);
@@ -128,11 +130,10 @@ function toggleConfigurator() {
     }
 
     quantityCell.textContent = quantity;
-    calculateAdditionalCost(); // Wywołujemy funkcję calculateAdditionalCost() po każdej zmianie ilości
-  }
+    calculateAdditionalCost();
+  };
 
-  // Funkcja do obliczania całkowitego kosztu dodatków
-  function calculateAdditionalCost() {
+  const calculateAdditionalCost = () => {
     let totalCost = 0;
     document
       .querySelectorAll(".quantityCell")
@@ -144,16 +145,15 @@ function toggleConfigurator() {
       });
     document.getElementById("additionalCost").textContent =
       totalCost.toFixed(2);
-  }
+  };
 
-  // Dodawanie nasłuchiwania na zmiany ilości w tabeli
   document.querySelectorAll(".plusButton").forEach((button) => {
     button.addEventListener("click", () => {
       const isAddition = button.textContent === "+";
       changeQuantity(button, isAddition);
     });
   });
-}
+};
 
 const selectDate = document.createElement("select");
 selectDate.id = "selectDate";
@@ -177,32 +177,64 @@ for (let i = 0; i < 15; i++) {
   selectDate.appendChild(option);
 }
 
-function validatePurchase() {
+const validatePurchase = () => {
   const selectedRadioButton = document.querySelector(
     'input[name="paymentType"]:checked'
   );
   const nameInput = document.getElementById("imie");
   const surnameInput = document.getElementById("nazwisko");
+  const addressInput = document.getElementById("adres");
 
   if (!selectedRadioButton) {
     alert("Wybierz rodzaj płatności");
     return false;
   }
 
-  if (!nameInput.value.trim() || !surnameInput.value.trim()) {
-    alert("Wprowadź imię i nazwisko");
+  if (
+    !nameInput.value.trim() ||
+    !surnameInput.value.trim() ||
+    !addressInput.value.trim()
+  ) {
+    alert("Wprowadź imię i nazwisko oraz adres");
     return false;
   }
 
   return true;
-}
+};
+
+const buyCar = () => {
+  document.getElementById("buyButton").addEventListener("click", buyCar);
+
+  if (!validatePurchase()) {
+    return;
+  }
+
+  const carId = document.getElementById("carId").textContent;
+  const carTitle = document.getElementById("carTitle").textContent;
+  const carBrand = document.getElementById("carBrand").textContent;
+  const carModel = document.getElementById("carModel").textContent;
+  const carPrice = parseFloat(document.getElementById("carPrice").textContent);
+  const additionalCost = parseFloat(
+    document.getElementById("additionalCost").textContent
+  );
+  const deliveryDate = document.getElementById("selectDate").value;
+
+  let totalPrice = carPrice + additionalCost;
+
+  localStorage.setItem("carId", carId);
+  localStorage.setItem("carTitle", carTitle);
+  localStorage.setItem("carBrand", carBrand);
+  localStorage.setItem("carModel", carModel);
+  localStorage.setItem("totalPrice", totalPrice);
+  localStorage.setItem("deliveryDate", deliveryDate);
+
+  window.location.href = "buyPage.html";
+};
 
 document.getElementById("buyButton").addEventListener("click", buyCar);
 
-document.getElementById("goBackButton").addEventListener("click", goBack);
-
-function goBack() {
+document.getElementById("goBackButton").addEventListener("click", () => {
   console.log("czy to sie klika?");
   window.location.href = "main.html";
   document.getElementById("goBackButton").addEventListener("click", goBack);
-}
+});
