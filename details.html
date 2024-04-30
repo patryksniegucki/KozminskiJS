@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Szczegóły samochodu</title>
+</head>
+<body>
+    <h1>Szczegóły samochodu</h1>
+    <div id="carDetails">
+        <p>ID: <span id="carId"></span></p>
+        <p>Tytuł: <span id="carTitle"></span></p>
+        <p>Marka: <span id="carBrand"></span></p>
+        <p>Model: <span id="carModel"></span></p>
+        <p>Rok produkcji: <span id="carDateProd"></span></p>
+        <p>Kolor: <span id="carColor"></span></p>
+        <p>Przebieg: <span id="carMileage"></span></p>
+        <p>Cena: <span id="carPrice"></span></p>
+        <p>Moc: <span id="carHorsePower"></span></p>
+        <p>Pojemność silnika: <span id="carEngineCapacity"></span></p>
+        <p>Opis: <span id="carDescription"></span></p>
+    </div>
+   
+    <button id="configureCar" onclick="toggleConfigurator()">Konfigurator</button>
+    <section id="configuratorSection" style="display: none;">
+        <div>
+            <h2>Rodzaj płatności</h2>
+            <div>
+                <input type="radio" id="leasing" name="paymentType" value="leasing">
+                <label for="leasing">Leasing</label>
+            </div>
+            <div>
+                <input type="radio" id="gotowka" name="paymentType" value="gotowka">
+                <label for="gotowka">Gotówka</label>
+            </div>
+
+            <div>
+                <label for="imie">Imię:</label>
+                <input type="text" id="imie" name="imie">
+            </div>
+            <div>
+                <label for="nazwisko">Nazwisko:</label>
+                <input type="text" id="nazwisko" name="nazwisko">
+            </div>
+        </div>
+        
+        <h3>Koszt dodatków: <span id="additionalCost">0</span></h3>
+        <table id="optionalThingsTable">
+            <thead>
+                <tr>
+                    <th>Przedmiot</th>
+                    <th>Cena</th>
+                    <th>Ilość</th>
+                    <th></th> <!-- Pusta kolumna dla przycisków + i - -->
+                </tr>
+            </thead>
+            <tbody id="optionalThingsTableBody">
+                <!-- Wiersze będą dodawane dynamicznie przez JavaScript -->
+            </tbody>
+        </table>
+    </section>
+
+    <button id="goBackButton">Powrót</button>
+    <button id="buyButton">Kup</button>
+
+    <script src="details.js"></script>
+</body>
+
+</html>
