@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
     .then((data) => {
       const car = data.find((car) => car.id === parseInt(carId));
       if (car) {
-        document.getElementById("carPhoto").textContent = car.carPhoto;
+        document.getElementById("carPhoto").src = car.carPhoto;
         document.getElementById("carId").textContent = car.id;
         document.getElementById("carTitle").textContent = car.title;
         document.getElementById("carBrand").textContent = car.brand;

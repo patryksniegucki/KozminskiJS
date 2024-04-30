@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 });
 
-document.getElementById("goBackButton").addEventListener("click", goBack);
+// document.getElementById("goBackButton").addEventListener("click", goBack);
 
 document.getElementById("goBackButton").addEventListener("click", () => {
   console.log("czy to sie klika?");
