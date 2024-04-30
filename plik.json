@@ -1,9 +1,9 @@
 [
     {
     "id": 0,
-    "title": "test",
-    "brand": "Ford",
-    "model": "C-Max",
+    "title": "Halo czy nas słyszycie?",
+    "brand": "Warszawa",
+    "model": "C-Super",
     "carPhoto": "",
     "dateProd": 2005,
     "color": "Silver",
@@ -15,9 +15,9 @@
 },
 {
     "id": 1,
-    "title": "test nr 2",
-    "brand": "Ford",
-    "model": "C-Max",
+    "title": "Buggatti czy jakoś tak",
+    "brand": "Francuz",
+    "model": "Pod niemieckim szyldem",
     "carPhoto": "",
     "dateProd": 2005,
     "color": "Silver",
@@ -29,9 +29,9 @@
 },
 {
     "id": 2,
-    "title": "test nr 3",
-    "brand": "Ford",
-    "model": "C-Max",
+    "title": "Super auto pełne futra",
+    "brand": "Mercedes",
+    "model": "C class",
     "carPhoto": "",
     "dateProd": 2005,
     "color": "Silver",
@@ -53,5 +53,5 @@
     "carPrice": 50000,
     "horsePower": 125,
     "engineCapacity": 1.8,
-    "description": "opis auta dla picu"
+    "description": "opis auta dla picuopis auta dla picuopis auta dla picuopis auta dla picuopis auta dla picuopis auta dla picuopis auta dla picuopis auta dla picu opis auta dla picuopis auta dla picuopis auta dla picu"
 }]
