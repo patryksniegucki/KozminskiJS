@@ -1,0 +1,57 @@
+[
+    {
+    "id": 0,
+    "title": "test",
+    "brand": "Ford",
+    "model": "C-Max",
+    "carPhoto": "",
+    "dateProd": 2005,
+    "color": "Silver",
+    "mileage": 150000,
+    "carPrice": 50000,
+    "horsePower": 125,
+    "engineCapacity": 1.8,
+    "description": "opis auta dla picu"
+},
+{
+    "id": 1,
+    "title": "test nr 2",
+    "brand": "Ford",
+    "model": "C-Max",
+    "carPhoto": "",
+    "dateProd": 2005,
+    "color": "Silver",
+    "mileage": 150000,
+    "carPrice": 50000,
+    "horsePower": 125,
+    "engineCapacity": 1.8,
+    "description": "opis auta dla picu"
+},
+{
+    "id": 2,
+    "title": "test nr 3",
+    "brand": "Ford",
+    "model": "C-Max",
+    "carPhoto": "",
+    "dateProd": 2005,
+    "color": "Silver",
+    "mileage": 150000,
+    "carPrice": 50000,
+    "horsePower": 125,
+    "engineCapacity": 1.8,
+    "description": "opis auta dla picu"
+},
+{
+    "id": 3,
+    "title": "For C-MAX 1,8 Benzyna 125KM",
+    "brand": "Ford",
+    "model": "C-Max",
+    "carPhoto": "Ford_Focus_C-MAX_1.jpg",
+    "dateProd": 2005,
+    "color": "Silver",
+    "mileage": 150000,
+    "carPrice": 50000,
+    "horsePower": 125,
+    "engineCapacity": 1.8,
+    "description": "opis auta dla picu"
+}]

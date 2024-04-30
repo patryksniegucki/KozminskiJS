@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css" />
+    <title>Strona Główna</title>
+    <title>Lista samochodów</title>
+</head>
+<body>
+    <div id="wrapper">
+        <header>
+            <img class="logo" src=assets/super-auta-samochod.png alt="logo-header"/>
+        </header>
+    <nav>
+                <a class="menu active" href="/main.html">Produkty</a>
+                <a class="menu" href="#">Kontakt</a>
+    </nav>
+    <h1>Lista samochodów</h1>
+    <section class="main-section">
+        <table id="carTable">
+        <thead>
+            <tr>
+                <div>
+                <th>ID</th>
+                <th>Tytuł</th>
+                <th>Marka</th>
+                <th>Model</th>
+                <th>Rok produkcji</th>
+                <th>Kolor</th>
+                <th>Przebieg</th>
+                <th>Cena</th>
+                <th>Moc</th>
+                <th>Pojemność silnika</th>
+                <th>Opis</th>
+                <th>Szczegóły</th> <!-- Dodany przycisk -->
+            </div>
+            </tr>
+        </thead>
+        <tbody id="carTableBody"></tbody>
+    </table>
+    </section>
+    <footer>Footer aplikacji o sprzedaży aut by Patryk Śniegucki</footer>
+
+    <script src="main.js" defer></script>
+    </div>
+</body>
+</html>
