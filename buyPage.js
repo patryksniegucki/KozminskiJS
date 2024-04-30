@@ -24,8 +24,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
 document.getElementById("goBackButton").addEventListener("click", goBack);
 
-function goBack() {
+document.getElementById("goBackButton").addEventListener("click", () => {
   console.log("czy to sie klika?");
   window.location.href = "main.html";
   document.getElementById("goBackButton").addEventListener("click", goBack);
-}
+});
