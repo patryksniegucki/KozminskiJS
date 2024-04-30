@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Szczegóły samochodu</title>
+</head>
+<body>
+    <h1>Szczegóły samochodu</h1>
+    <div id="carDetails">
+        <p>ID: <span id="carId"></span></p>
+        <p>Tytuł: <span id="carTitle"></span></p>
+        <p>Marka: <span id="carBrand"></span></p>
+        <p>Model: <span id="carModel"></span></p>
+        <p>Rok produkcji: <span id="carDateProd"></span></p>
+        <p>Kolor: <span id="carColor"></span></p>
+        <p>Przebieg: <span id="carMileage"></span></p>
+        <p>Cena: <span id="carPrice"></span></p>
+        <p>Moc: <span id="carHorsePower"></span></p>
+        <p>Pojemność silnika: <span id="carEngineCapacity"></span></p>
+        <p>Opis: <span id="carDescription"></span></p>
+    </div>
+   
+    <button id="configureCar" onclick="toggleConfigurator()">Konfigurator</button>
+    <section id="configuratorSection" style="display: none;">
+        <div>
+            <h2>Rodzaj płatności</h2>
+            <div>
+                <input type="radio" id="leasing" name="paymentType" value="leasing">
+                <label for="leasing">Leasing</label>
+            </div>
+            <div>
+                <input type="radio" id="gotowka" name="paymentType" value="gotowka">
+                <label for="gotowka">Gotówka</label>
+            </div>
+    </section>
+
+    <button id="goBackButton">Powrót</button>
+
+    <script src="details.js" defer></script>
+</body>
+
+</html>
