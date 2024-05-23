@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
     <title>Szczegóły samochodu</title>
 </head>
 <body>
@@ -22,8 +23,8 @@
         <p>Opis: <span id="carDescription"></span></p>
     </div>
    
-    <button id="configureCar" onclick="toggleConfigurator()">Konfigurator</button>
-    <section id="configuratorSection" style="display: none;">
+    <button id="configureCar">Konfigurator</button>
+    <section id="configuratorSection" class="hidden">
         <div>
             <h2>Rodzaj płatności</h2>
             <div>
@@ -36,12 +37,12 @@
             </div>
 
             <div>
-                <label for="imie">Imię:</label>
-                <input type="text" id="imie" name="imie">
+                <label for="firstName">Imię:</label>
+                <input type="text" id="firstName" name="firstName">
             </div>
             <div>
-                <label for="nazwisko">Nazwisko:</label>
-                <input type="text" id="nazwisko" name="nazwisko">
+                <label for="lastName">Nazwisko:</label>
+                <input type="text" id="lastName" name="lastName">
             </div>
             <div>
                 <label for="adres">Adres:</label>
