@@ -17,8 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
         document.getElementById("carMileage").textContent = car.mileage;
         document.getElementById("carPrice").textContent = car.carPrice;
         document.getElementById("carHorsePower").textContent = car.horsePower;
-        document.getElementById("carEngineCapacity").textContent =
-          car.engineCapacity;
+        document.getElementById("carEngineCapacity").textContent = car.engineCapacity;
         document.getElementById("carDescription").textContent = car.description;
 
         document.getElementById("carTableBody").style.display = "none";
@@ -31,7 +30,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
 const toggleConfigurator = () => {
   const section = document.getElementById("configuratorSection");
-  section.style.display = section.style.display === "none" ? "block" : "none";
+  // section.style.display = section.style.display === "none" ? "block" : "none";
+  section.classList.toggle("hidden");
+  section.classList.toggle("visible");
 
   fetch("optionalThings.json")
     .then((response) => response.json())
@@ -39,14 +40,15 @@ const toggleConfigurator = () => {
       const optionalThingsTableBody = document.getElementById(
         "optionalThingsTableBody"
       );
+      optionalThingsTableBody.innerHTML = ""; // Clear previous content
       data.forEach((item) => {
         const row = document.createElement("tr");
         row.innerHTML = `
-                    <td>${item.item}</td>
-                    <td>${item.price}</td>
-                    <td class="quantityCell">0</td>
-                    <td><button class="plusButton">+</button></td>
-                  `;
+              <td>${item.item}</td>
+              <td>${item.price}</td>
+              <td class="quantityCell">0</td>
+              <td><button class="plusButton">+</button></td>
+          `;
         optionalThingsTableBody.appendChild(row);
       });
 
@@ -85,20 +87,22 @@ const toggleConfigurator = () => {
   });
 
   const handleInputChange = () => {
-    const name = document.getElementById("imie").value;
-    const surname = document.getElementById("nazwisko").value;
+    const name = document.getElementById("firstName").value;
+    const surname = document.getElementById("lastName").value;
     const address = document.getElementById("adres").value;
-    console.log("Imię:", name);
-    console.log("Nazwisko:", surname);
-    console.log("Adres:", address);
+    // console.log("Imię:", name);
+    // console.log("Nazwisko:", surname);
+    // console.log("Adres:", address);
     localStorage.setItem("name", name);
     localStorage.setItem("surname", surname);
     localStorage.setItem("address", address);
   };
 
-  document.getElementById("imie").addEventListener("input", handleInputChange);
   document
-    .getElementById("nazwisko")
+    .getElementById("firstName")
+    .addEventListener("input", handleInputChange);
+  document
+    .getElementById("lastName")
     .addEventListener("input", handleInputChange);
   document.getElementById("adres").addEventListener("input", handleInputChange);
 
@@ -106,8 +110,8 @@ const toggleConfigurator = () => {
   const storedSurname = localStorage.getItem("surname");
   const storedAddress = localStorage.getItem("address");
   if (storedName && storedSurname && storedAddress) {
-    document.getElementById("imie").value = storedName;
-    document.getElementById("nazwisko").value = storedSurname;
+    document.getElementById("firstName").value = storedName;
+    document.getElementById("lastName").value = storedSurname;
     document.getElementById("adres").value = storedAddress;
   }
 
@@ -181,8 +185,8 @@ const validatePurchase = () => {
   const selectedRadioButton = document.querySelector(
     'input[name="paymentType"]:checked'
   );
-  const nameInput = document.getElementById("imie");
-  const surnameInput = document.getElementById("nazwisko");
+  const nameInput = document.getElementById("firstName");
+  const surnameInput = document.getElementById("lastName");
   const addressInput = document.getElementById("adres");
 
   if (!selectedRadioButton) {
@@ -238,3 +242,7 @@ document.getElementById("goBackButton").addEventListener("click", () => {
   window.location.href = "main.html";
   document.getElementById("goBackButton").addEventListener("click", goBack);
 });
+
+document
+  .getElementById("configureCar")
+  .addEventListener("click", toggleConfigurator);
