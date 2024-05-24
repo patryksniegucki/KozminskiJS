@@ -9,6 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const name = localStorage.getItem("name"); 
   const surname = localStorage.getItem("surname"); 
   const address = localStorage.getItem("address");
+  const selectedItems = JSON.parse(localStorage.getItem("selectedItems")) || [];
 
   // Wyświetl dane w formularzu
   document.getElementById("carId").textContent = carId;
@@ -19,7 +20,8 @@ document.addEventListener("DOMContentLoaded", function () {
   document.getElementById("deliveryDate").textContent = deliveryDate;
   document.getElementById("fullName").textContent = `${name} ${surname}`;
   document.getElementById("address").textContent = address;
-
+  document.getElementById("selectedItems").textContent =
+    selectedItems.join(", ");
 });
 
 // document.getElementById("goBackButton").addEventListener("click", goBack);
