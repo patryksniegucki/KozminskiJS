@@ -137,19 +137,25 @@ const toggleConfigurator = () => {
     calculateAdditionalCost();
   };
 
-  const calculateAdditionalCost = () => {
+  function calculateAdditionalCost() {
     let totalCost = 0;
-    document
-      .querySelectorAll(".quantityCell")
-      .forEach((quantityCell, index) => {
-        const quantity = parseInt(quantityCell.textContent);
-        const priceCell = quantityCell.previousElementSibling;
-        const price = parseFloat(priceCell.textContent);
+    let selectedItems = [];
+    document.querySelectorAll(".quantityCell").forEach((quantityCell) => {
+      const quantity = parseInt(quantityCell.textContent);
+      if (quantity > 0) {
+        const row = quantityCell.parentNode;
+        const item = row.querySelector("td:first-child").textContent;
+        const price = parseFloat(
+          row.querySelector("td:nth-child(2)").textContent
+        );
         totalCost += quantity * price;
-      });
+        selectedItems.push(item);
+      }
+    });
     document.getElementById("additionalCost").textContent =
       totalCost.toFixed(2);
-  };
+    localStorage.setItem("selectedItems", JSON.stringify(selectedItems));
+  }
 
   document.querySelectorAll(".plusButton").forEach((button) => {
     button.addEventListener("click", () => {
