@@ -21,12 +21,12 @@ document.addEventListener("DOMContentLoaded", function () {
   document.getElementById("selectedItems").textContent =
     selectedItems.join(", ");
 
-    if (selectedItems.length > 0) {
-      document.getElementById("selectedItems").textContent =
-        selectedItems.join(", ");
-    } else {
-      document.getElementById("selectedItems").textContent = "brak";
-    }  
+  if (selectedItems.length > 0) {
+    document.getElementById("selectedItems").textContent =
+      selectedItems.join(", ");
+  } else {
+    document.getElementById("selectedItems").textContent = "brak";
+  }
 });
 
 document.getElementById("goBackButton").addEventListener("click", () => {
