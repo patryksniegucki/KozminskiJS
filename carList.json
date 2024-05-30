@@ -1,5 +1,5 @@
 [
-    {
+  {
     "id": 0,
     "title": "Halo czy nas słyszycie?",
     "brand": "Warszawa",
@@ -12,8 +12,8 @@
     "horsePower": 125,
     "engineCapacity": 1.8,
     "description": "opis auta dla picu"
-},
-{
+  },
+  {
     "id": 1,
     "title": "Buggatti czy jakoś tak",
     "brand": "Francuz",
@@ -26,8 +26,8 @@
     "horsePower": 125,
     "engineCapacity": 1.8,
     "description": "opis auta dla picu"
-},
-{
+  },
+  {
     "id": 2,
     "title": "Super auto pełne futra",
     "brand": "Mercedes",
@@ -40,8 +40,8 @@
     "horsePower": 125,
     "engineCapacity": 1.8,
     "description": "opis auta dla picu"
-},
-{
+  },
+  {
     "id": 3,
     "title": "For C-MAX 1,8 Benzyna 125KM",
     "brand": "Ford",
@@ -54,4 +54,5 @@
     "horsePower": 125,
     "engineCapacity": 1.8,
     "description": "opis auta dla picuopis auta dla picuopis auta dla picuopis auta dla picuopis auta dla picuopis auta dla picuopis auta dla picuopis auta dla picu opis auta dla picuopis auta dla picuopis auta dla picu"
-}]
+  }
+]
