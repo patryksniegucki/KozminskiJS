@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const urlParams = new URLSearchParams(window.location.search);
   const carId = urlParams.get("id");
 
-  fetch("plik.json")
+  fetch("carList.json")
     .then((response) => response.json())
     .then((data) => {
       const car = data.find((car) => car.id === parseInt(carId));
@@ -17,12 +17,13 @@ document.addEventListener("DOMContentLoaded", () => {
         document.getElementById("carMileage").textContent = car.mileage;
         document.getElementById("carPrice").textContent = car.carPrice;
         document.getElementById("carHorsePower").textContent = car.horsePower;
-        document.getElementById("carEngineCapacity").textContent = car.engineCapacity;
+        document.getElementById("carEngineCapacity").textContent =
+          car.engineCapacity;
         document.getElementById("carDescription").textContent = car.description;
 
         document.getElementById("carTableBody").style.display = "none";
       } else {
-        console.error("Samochód o podanym ID nie został znaleziony.");
+        alert("Samochód o podanym ID nie został znaleziony.");
       }
     })
     .catch((error) => console.error("Wystąpił błąd:", error));
@@ -30,7 +31,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 const toggleConfigurator = () => {
   const section = document.getElementById("configuratorSection");
-  // section.style.display = section.style.display === "none" ? "block" : "none";
   section.classList.toggle("hidden");
   section.classList.toggle("visible");
 
@@ -40,7 +40,7 @@ const toggleConfigurator = () => {
       const optionalThingsTableBody = document.getElementById(
         "optionalThingsTableBody"
       );
-      optionalThingsTableBody.innerHTML = ""; // Clear previous content
+      optionalThingsTableBody.innerHTML = "";
       data.forEach((item) => {
         const row = document.createElement("tr");
         row.innerHTML = `
@@ -75,10 +75,9 @@ const toggleConfigurator = () => {
     );
     if (selectedRadioButton) {
       const paymentType = selectedRadioButton.value;
-      console.log("Wybrany rodzaj płatności:", paymentType);
       localStorage.setItem("paymentType", paymentType);
     } else {
-      console.log("Żaden radiobutton nie jest wybrany.");
+      alert("Żaden radiobutton nie jest wybrany.");
     }
   };
 
@@ -90,9 +89,6 @@ const toggleConfigurator = () => {
     const name = document.getElementById("firstName").value;
     const surname = document.getElementById("lastName").value;
     const address = document.getElementById("adres").value;
-    // console.log("Imię:", name);
-    // console.log("Nazwisko:", surname);
-    // console.log("Adres:", address);
     localStorage.setItem("name", name);
     localStorage.setItem("surname", surname);
     localStorage.setItem("address", address);
@@ -152,6 +148,7 @@ const toggleConfigurator = () => {
         selectedItems.push(item);
       }
     });
+
     document.getElementById("additionalCost").textContent =
       totalCost.toFixed(2);
     localStorage.setItem("selectedItems", JSON.stringify(selectedItems));
@@ -244,7 +241,6 @@ const buyCar = () => {
 document.getElementById("buyButton").addEventListener("click", buyCar);
 
 document.getElementById("goBackButton").addEventListener("click", () => {
-  console.log("czy to sie klika?");
   window.location.href = "main.html";
   document.getElementById("goBackButton").addEventListener("click", goBack);
 });
