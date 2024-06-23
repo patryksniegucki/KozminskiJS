@@ -1,45 +1,45 @@
 [
   {
     "id": 0,
-    "title": "Halo czy nas słyszycie?",
-    "brand": "Warszawa",
-    "model": "C-Super",
-    "carPhoto": "assets/Ford_Focus_C-MAX_1.jpg",
-    "dateProd": 2005,
+    "title": "Volkswagen Passat igła",
+    "brand": "Volkswagen",
+    "model": "Passat",
+    "carPhoto": "assets/niemiec 1.png",
+    "dateProd": 2020,
     "color": "Silver",
-    "mileage": 150000,
-    "carPrice": 50000,
-    "horsePower": 125,
-    "engineCapacity": 1.8,
-    "description": "opis auta dla picu"
+    "mileage": 158600,
+    "carPrice": 85000,
+    "horsePower": 140,
+    "engineCapacity": 2.0,
+    "description": "Auto kupione w salonie w Polsce , jest bezwypadkowe . Miało dwóch właścicieli. Auto ma tylko 145tyś.km przebiegu i to pewnego.W aucie nowe tarcze I klocki."
   },
   {
     "id": 1,
-    "title": "Buggatti czy jakoś tak",
-    "brand": "Francuz",
-    "model": "Pod niemieckim szyldem",
-    "carPhoto": "assets/Ford_Focus_C-MAX_1.jpg",
-    "dateProd": 2005,
-    "color": "Silver",
-    "mileage": 150000,
-    "carPrice": 50000,
-    "horsePower": 125,
-    "engineCapacity": 1.8,
-    "description": "opis auta dla picu"
+    "title": "Renault Talisman nie bity",
+    "brand": "Renault",
+    "model": "Renault Talisman",
+    "carPhoto": "assets/francuz 1.png",
+    "dateProd": 2015,
+    "color": "Black",
+    "mileage": 173000,
+    "carPrice": 67000,
+    "horsePower": 200,
+    "engineCapacity": 1.6,
+    "description": "RENAULT Talisman 15-20, 1.6 Energy TCe Initiale Paris EDC 200KM."
   },
   {
     "id": 2,
-    "title": "Super auto pełne futra",
-    "brand": "Mercedes",
-    "model": "C class",
-    "carPhoto": "assets/Ford_Focus_C-MAX_1.jpg",
-    "dateProd": 2005,
+    "title": "Toyota Avensis 1.8 Premium",
+    "brand": "Toyota",
+    "model": "Avensis",
+    "carPhoto": "assets/japoniec 1.png",
+    "dateProd": 2018,
     "color": "Silver",
-    "mileage": 150000,
-    "carPrice": 50000,
-    "horsePower": 125,
+    "mileage": 196000,
+    "carPrice": 59999,
+    "horsePower": 147,
     "engineCapacity": 1.8,
-    "description": "opis auta dla picu"
+    "description": "Samochód kupiony w polskim salonie Toyoty w 2019 roku. Rok produkcji 2018. Pełny komplet dokumentów,2x kluczyk oryginalny."
   },
   {
     "id": 3,
@@ -50,9 +50,9 @@
     "dateProd": 2005,
     "color": "Silver",
     "mileage": 150000,
-    "carPrice": 50000,
+    "carPrice": 18000,
     "horsePower": 125,
     "engineCapacity": 1.8,
-    "description": "opis auta dla picuopis auta dla picuopis auta dla picuopis auta dla picuopis auta dla picuopis auta dla picuopis auta dla picuopis auta dla picu opis auta dla picuopis auta dla picuopis auta dla picu"
+    "description": "Bez rdzy."
   }
 ]

@@ -2,17 +2,17 @@
   {
     "id": 0,
     "item": "Koła Zimowe",
-    "price": 2000
+    "price": 2500
   },
   {
     "id": 1,
-    "item": "Wentyle do stara",
-    "price": 500
+    "item": "Folia na lakier",
+    "price": 1500
   },
   {
     "id": 2,
     "item": "Koła letnie",
-    "price": 2000
+    "price": 2500
   },
   {
     "id": 3,
@@ -21,7 +21,7 @@
   },
   {
     "id": 4,
-    "item": "Koła Zimowe",
+    "item": "Asystent Parkowania",
     "price": 2000
   }
 ]
